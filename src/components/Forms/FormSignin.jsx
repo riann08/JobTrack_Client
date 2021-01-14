@@ -41,9 +41,9 @@ class FormSignin extends Component {
     return (
       <form className = "flex--column" onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" />
+        <input type="email" id="email" name="email" onChange={this.handleChange} value={this.state.email}/>
         <label htmlFor="password">Password</label>
-        <input type="password" id="password" name="password" />
+        <input type="password" id="password" name="password" onChange={this.handleChange} value={this.state.password} />
         <button>Submit</button>
       </form>
     );

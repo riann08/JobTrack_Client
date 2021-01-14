@@ -41,52 +41,61 @@ export default {
       .catch(errorHandler);
   },
 
-  getItems() {
-     return service
-       .get("/api/")
+  getJobs() {
+    return service
+      .get("/job")
       .then((res) => res.data)
       .catch(errorHandler);
   },
 
-//   updateUser(data) {
-//     return service
-//       .patch("/users/me", data)
-//       .then((res) => res.data)
-//       .catch(errorHandler);
-//   },
+  updateJob( jobId, data) {
+    return service
+      .patch(`/job/${jobId}`, data)
+      .then((res) => res.data)
+      .catch(errorHandler)
+  },
 
-//   getUserInfos() {
-//     return service
-//       .get("/users/me")
-//       .then((res) => res.data)
-//       .catch(errorHandler);
-//   },
+  createJob(data) {
+    return service
+      .post("/job", data)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
 
-//   removeItem(itemId) {
-//     return service
-//       .delete(`/items/${itemId}`)
-//       .then((res) => res.data)
-//       .catch(errorHandler);
-//   },
+  deleteJob(jobId) {
+    return service
+      .delete(`/job/${jobId}`)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
 
-//   updateItem(itemId, data) {
-//     return service
-//       .patch(`/items/${itemId}`, data)
-//       .then((res) => res.data)
-//       .catch(errorHandler);
-//   },
+  updateUser(userId, data) {
+    return service
+      .patch(`/user/${userId}`, data)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
 
-//   getUserItems() {
-//     return service
-//       .get("/users/me/items")
-//       .then((res) => res.data)
-//       .catch(errorHandler);
-//   },
+  getUserInfo() {
+    return service
+      .get(`/user/${userId}`, data)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
 
-//   addItem(data) {
-//     return service
-//       .post("/items", data)
-//       .then((res) => res.data)
-//       .catch(errorHandler);
-//   },
- };
+  createUser(data) {
+    return service
+      .post(`/user/${userId}`, data)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  deleteUser(UserId) {
+    return service
+      .delete(`/user/${userId}`)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  }
+
+};
+
