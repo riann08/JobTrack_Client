@@ -6,6 +6,8 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
+import Dashboard from "./pages/Dashboard";
+import NotFound from "./pages/NotFound.jsx";
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/signup" component={Signup} />
         <ProtectedRoute exact path="/profile" component={Profile} />
-      </Switch>
+        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+        <Route path="*" component={NotFound} />
+         </Switch>
     </div>
   );
 }

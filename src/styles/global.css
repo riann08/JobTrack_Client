@@ -18,3 +18,18 @@ a {
 ul {
   list-style-type: none;
 }
+
+.flex--column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}  
+
+.flex--row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+} 
+

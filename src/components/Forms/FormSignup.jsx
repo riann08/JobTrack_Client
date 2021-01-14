@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect, NavLink} from "react-router-dom";
 import { UserContext } from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 
@@ -7,8 +7,10 @@ class FormSignup extends Component {
   static contextType = UserContext;
 
   state = {
+    userName: "",
     email: "",
     password: "",
+    profileImg: "",
   };
 
   handleChange = (event) => {
@@ -33,11 +35,20 @@ class FormSignup extends Component {
 
   render() {
     if (this.context.user) {
-      return <Redirect to="/" />;
+      return <Redirect to="/dashboard" />;
     }
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className ="flex--column"
+       onSubmit={this.handleSubmit}>
+        <label htmlFor="userName">User Name</label>
+        <input
+          onChange={this.handleChange}
+          value={this.state.userName}
+          type="userName"
+          id="userName"
+          name="userName"
+        />
         <label htmlFor="email">Email</label>
         <input
           onChange={this.handleChange}
@@ -54,8 +65,21 @@ class FormSignup extends Component {
           id="password"
           name="password"
         />
+        
+        <label htmlFor="profileImg">Profile Image</label>
+        <input
+          onChange={this.handleChange}
+          value={this.state.profileImg}
+          type="profileImg"
+          id="profileImg"
+          name="profileImg"
+        />
         <button>Submit</button>
+
+        <p>Already have an account?</p> <NavLink to="/signin">Log in</NavLink>
       </form>
+
+
     );
   }
 }
