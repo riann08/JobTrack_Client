@@ -7,19 +7,19 @@ import "../styles/NavMain.css";
 
 const NavMain = (props) => {
   const { context } = props;
-
+  
   function handleLogout() {
     apiHandler
-      .logout()
+    .logout()
       .then(() => {
         context.removeUser();
       })
       .catch((error) => {
         console.log(error);
       });
-  }
-
-  return (
+    }
+    
+    return (
     <nav className="NavMain">
       <NavLink exact to="/">
         <h3 className="logo">JOB TRACKER</h3>

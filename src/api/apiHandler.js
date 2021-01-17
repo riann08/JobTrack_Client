@@ -1,14 +1,14 @@
 import axios from "axios";
 
 const service = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_URL,
-  withCredentials: true, // Cookie is sent to client when using this service. (used for session)
+  baseURL: process.env.REACT_APP_BACKEND_URL + "/api",
+  withCredentials: true,
 });
 
 function errorHandler(error) {
-  if (error.response.data) {
-    console.log(error.response && error.response.data);
-    throw error;
+  if (error.response) {
+    console.log(error.response.data.message);
+    throw error.response.data;
   }
   throw error;
 }
@@ -18,36 +18,84 @@ export default {
 
   signup(userInfo) {
     return service
-      .post("/api/auth/signup", userInfo)
+      .post("/auth/signup", userInfo)
       .then((res) => res.data)
       .catch(errorHandler);
   },
 
   signin(userInfo) {
     return service
-      .post("/api/auth/signin", userInfo)
-      .then((res) => res.data)
-      .catch(errorHandler);
-  },
-
-  isLoggedIn() {
-    return service
-      .get("/api/auth/isLoggedIn")
+      .post("/auth/signin", userInfo)
       .then((res) => res.data)
       .catch(errorHandler);
   },
 
   logout() {
+    return service.get("/auth/logout").catch(errorHandler);
+  },
+
+  isLoggedIn() {
     return service
-      .get("/api/auth/logout")
+      .get("/auth/isLoggedIn")
       .then((res) => res.data)
       .catch(errorHandler);
   },
 
-  getItems() {
+  getJobs() {
     return service
-      .get("/api/items")
+      .get("/job")
       .then((res) => res.data)
       .catch(errorHandler);
   },
+
+  updateJob( jobId, data) {
+    return service
+      .patch(`/job/${jobId}`, data)
+      .then((res) => res.data)
+      .catch(errorHandler)
+  },
+
+  createJob(data) {
+    return service
+      .post("/job", data)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  deleteJob(jobId) {
+    return service
+      .delete(`/job/${jobId}`)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  updateUser(userId, data) {
+    return service
+      .patch(`/user/${userId}`, data)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  getUserInfo(userId) {
+    return service
+      .get(`/user/${userId}`)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  createUser(data) {
+    return service
+      .post(`/user, data`)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+  deleteUser(userId) {
+    return service
+      .delete(`/user/${userId}`)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  }
+
 };
+
