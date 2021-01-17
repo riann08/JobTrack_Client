@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter, Redirect, NavLink} from "react-router-dom";
 import { UserContext } from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
+import Button from '@material-ui/core/Button';
 
 class FormSignup extends Component {
   static contextType = UserContext;
@@ -39,6 +40,8 @@ class FormSignup extends Component {
     }
 
     return (
+
+      <div className ="FormSignup flex--column">
       <form className ="flex--column"
        onSubmit={this.handleSubmit}>
         <label htmlFor="userName">User Name</label>
@@ -70,15 +73,15 @@ class FormSignup extends Component {
         <input
           onChange={this.handleChange}
           value={this.state.profileImg}
-          type="profileImg"
+          type="file"
           id="profileImg"
           name="profileImg"
         />
-        <button>Submit</button>
+        <Button variant="contained" color="primary">Join</Button>
 
         <p>Already have an account?</p> <NavLink to="/signin">Log in</NavLink>
       </form>
-
+</div>
 
     );
   }

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { UserContext } from "../Auth/UserContext";
 import { withRouter, Redirect } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
+import Button from '@material-ui/core/Button';
+
 
 class FormSignin extends Component {
   static contextType = UserContext;
@@ -39,13 +41,15 @@ class FormSignin extends Component {
     }
 
     return (
-      <form className = "flex--column" onChange={this.handleChange} onSubmit={this.handleSubmit}>
+      
+      <form className="flex--column" onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <label htmlFor="email">Email</label>
-        <input type="email" id="email" name="email" onChange={this.handleChange} value={this.state.email}/>
+        <input type="email" id="email" name="email" onChange={this.handleChange} value={this.state.email} />
         <label htmlFor="password">Password</label>
         <input type="password" id="password" name="password" onChange={this.handleChange} value={this.state.password} />
-        <button>Submit</button>
+        <Button variant="contained" color="primary">Submit</Button>
       </form>
+
     );
   }
 }

@@ -2,7 +2,7 @@ import React from "react";
 import FormSignup from "../components/Forms/FormSignup";
 
 const Signup = (props) => {
-  return <FormSignup />;
+  return <div className="Signup flex--column"><FormSignup />;</div>
 };
 
 export default Signup;

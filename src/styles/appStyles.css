@@ -1,9 +1,18 @@
 
-.FormSignIn{
-    width: 100vw;
+.SignIn{
+    width: 80vw;
+    border: blue 2px solid;
+    background-color: cadetblue;
   }
-  
-  .img__Home{
-      width: 60vw;
-      height:60vh;
-  }
+
+.FormSignup{
+    border: blue 1px solid;
+    width: 400px;
+    height: 400px;
+
+}
+
+.img__Home{
+    width: 400px;
+    height:400px;
+}

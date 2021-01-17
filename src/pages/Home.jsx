@@ -1,16 +1,14 @@
 import React from "react";
 import FormSignUp from "../components/Forms/FormSignup";
+import FormJob from "../components/Forms/FormJob";
 
 class Home extends React.Component {
   render() {
     return (
-      <>
-        <h1>Job Track Home</h1>
-
-        {/* <img className="img__Home" src="/assets/images/my resume backdrop.jpg" alt="backdrop home" /> */}
-
-      <div>
-          <FormSignUp />
+      <>    
+      <div className="Home flex--row">
+        {/* <img className="img__Home" src="/assets/images/mybackdrop.jpg" alt="backdrop home" /> */}
+      <FormSignUp />
         </div>
       </>
     )

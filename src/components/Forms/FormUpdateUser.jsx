@@ -14,13 +14,16 @@ class FormUpdateUser extends Component {
   };
 
   componentDidMount() {
-    const userId = this.props.match.params.id;
-
+    // console.log(this.context.user._id);
+    // console.log("test" + this.props.match.params.id);
+    const userId = this.context.user._id;
+    ;
+    
     apiHandler
-      .getUserInfo(userId)
-      .then((apiResponse) => {
-        // console.log(apiResponse);
-        const user = apiResponse.data;
+    .getUserInfo(userId)
+    .then((apiResponse) => {
+      const user = apiResponse;
+      console.log(apiResponse);
         this.setState({
           userName: user.userName,
           email: user.email,

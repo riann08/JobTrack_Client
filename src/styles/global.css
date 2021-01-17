@@ -8,11 +8,12 @@
 
 html {
   font-family: "Manrope", sans-serif;
+  color:grey;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
+  color: rgb(24, 121, 124);
 }
 
 ul {

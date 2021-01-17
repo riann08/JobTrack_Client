@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function FormJob() {
+export class FormJob extends Component {
+  render() {
     return (
-        <div>
-            I am the form
-        </div>
+      <div>
+        <h1>redo</h1>
+      </div>
     )
+  }
 }
 
 export default FormJob
