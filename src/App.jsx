@@ -27,7 +27,6 @@ function App() {
         <Route exact path="/job" component={Dashboard} />
         <Route exact path="/job/create" component={FormJob} />
         <Route exact path="/job/:id/edit" component={FormJobUpdate} />
-        <Route exact path="/job/:id/delete" component={FormJob} />
         <ProtectedRoute exact path="/dashboard" component={Dashboard} />
         <Route exact path="/profile/:id/edit" component={FormUpdateUser} />
 
