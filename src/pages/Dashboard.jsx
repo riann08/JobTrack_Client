@@ -1,6 +1,6 @@
 import React from 'react'
 import JobCard from "../components/JobCard";
-import SearchBar from "../components/SearchBar";
+//import SearchBar from "../components/SearchBar";
 import apiHandler from "../api/apiHandler";
 
 class Dashboard extends React.Component {
@@ -25,12 +25,16 @@ class Dashboard extends React.Component {
     // get all the jobs from the DB. (probably in componentdidmount)
     // set the state with the jobs from the db
 render(){
+
+    if (this.state.jobs === null){
+        return <div>Loading...</div>
+    }
 return (
     
         <div className="Dashboard ">
             <div className="Dashboard__search flex--row">
                 <h1>Welcome to your Dashboard.</h1>
-                <SearchBar />
+                {/* <SearchBar /> */}
             </div>;
 
             {this.state.jobs.map((job) => 

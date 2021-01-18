@@ -77,7 +77,7 @@ class FormSignup extends Component {
           id="profileImg"
           name="profileImg"
         />
-        <Button variant="contained" color="primary">Join</Button>
+        <button variant="contained" color="primary">Join</button>
 
         <p>Already have an account?</p> <NavLink to="/signin">Log in</NavLink>
       </form>

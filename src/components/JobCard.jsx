@@ -22,15 +22,15 @@ class JobCard extends React.Component {
           <p>{this.props.job.website}</p>
           <p>{this.props.job.contactPerson}</p>
 
-          <Link to="/job/:id">
+          <Link to={"/job/" + this.props.job._id}>
             See more...
           </Link>
 
-          <Link to="/job/:id/edit">
+          <Link to={"/job/" + this.props.job._id + "/edit"} >
             Edit
           </Link>
 
-          <Link to="/job/:id/delete">
+          <Link to={"/job/" + this.props.job._id + "/delete"}>
             Delete
           </Link>
         </div>

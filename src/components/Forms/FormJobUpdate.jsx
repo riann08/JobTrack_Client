@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-import apiHandler from "../../api/apiHandler";
-import Button from '@material-ui/core/Button';
+import apiHandler from "../../api/apiHandler"
+import {withRouter} from "react-router-dom";
 import { UserContext } from "../Auth/UserContext";
 
-export class FormJob extends Component {
-  static contextType = UserContext;
-
-  state = {
+export class FormJobUpdate extends Component {
+ state = {
     company: "",
     jobTitle: "",   
     jobDescription: "",
@@ -23,43 +21,41 @@ export class FormJob extends Component {
 
     apiHandler.getJobInfo(jobId)
       .then((apiResponse) => {
-        console.log(apiResponse);
-   //     const job = apiResponse.data;
-        this.setState({
-        
-        });
+       this.setState( {
+        company: apiResponse.company,
+        jobTitle: apiResponse.jobTitle,
+        jobDescription: apiResponse.jobDescription,
+        contactPerson: {name: apiResponse.contactPerson.name, 
+          phone: apiResponse.contactPerson.phone, 
+          email:apiResponse.contactPerson.email},
+        website: apiResponse.website,
+        notes: apiResponse.notes,
+        cvSentDate: apiResponse.cvSentDate,
+        status: apiResponse.status
+       })
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
-
+//update
   handleChange = (event) => {
     const name = event.target.name;
-    const value = event.target.value;
+    const defaultValue = event.target.defaultvalue;
     this.setState({
-      [name]: value,
+      [name]: defaultValue,
     });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
 
-    apiHandler
-      .updateJob({
-        company: this.state.company,
-        jobTitle: this.state.jobTitle,
-        jobDescription: this.state.jobDescription,
-        // contactPerson.name: this.state.contactPerson.name,
-        // phone: this.state.contactPerson.phone,
-        // email: this.state.contactPerson.email,
-        website: this.state.website,
-        notes: this.state.notes,
-        cvSentDate: this.state.cvSentDate,
-        status: this.state.status
-      })
+    
+const jobId = this.props.match.params.id;
 
+    apiHandler
+      .updateJob(jobId, this.state )
       .then((apiResponse) => {
         console.log(apiResponse);
         this.props.history.push("/dashboard");
@@ -90,12 +86,12 @@ export class FormJob extends Component {
           <div className="contact flex--column">
             <p>Contact person</p>
             <label htmlFor="">Name</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.name" defaultValue={this.state.name} />
+            <input onChange={this.handleChange} type="text" name="contactPerson.name" defaultValue={this.state.contactPerson.name} />
 
             <label htmlFor="">Phone number</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.phone" defaultValue={this.state.phone} />
+            <input onChange={this.handleChange} type="text" name="contactPerson.phone" defaultValue={this.state.contactPerson.phone} />
             <label htmlFor="">Email</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.email" defaultValue={this.state.email} />
+            <input onChange={this.handleChange} type="text" name="contactPerson.email" defaultValue={this.state.contactPerson.email} />
           </div>
 
           <div>
@@ -122,10 +118,11 @@ export class FormJob extends Component {
 
           <div>
             <label htmlFor="">CV sent on  </label>
-            <input onChange={this.handleChange} type="date" name="cvSentDate" defaultValue={this.state.cvSentDate} />
+            <input onChange={this.handleChange} type="date" name="cvSentDate" 
+            defaultValue={this.state.cvSentDate} />
           </div>
 
-          <Button variant="contained" color="primary">Submit !</Button>
+          <button>Submit !</button>
         </form>
       </div>
     );
@@ -134,4 +131,4 @@ export class FormJob extends Component {
 
 
 
-export default FormJob
+export default withRouter(FormJobUpdate)
