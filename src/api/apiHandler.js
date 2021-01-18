@@ -47,6 +47,13 @@ export default {
       .then((res) => res.data)
       .catch(errorHandler);
   },
+//not tested
+  getJobInfo(jobId) {
+    return service
+      .get(`/job/${jobId}`)
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
 
   updateJob( jobId, data) {
     return service

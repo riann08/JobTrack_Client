@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { UserContext } from "../Auth/UserContext";
 import { withRouter, Redirect } from "react-router-dom";
 import apiHandler from "../../api/apiHandler";
-import Button from '@material-ui/core/Button';
+
 
 
 class FormSignin extends Component {
@@ -27,7 +27,7 @@ class FormSignin extends Component {
       .signin(this.state)
       .then((data) => {
         this.context.setUser(data);
-        this.props.history.push("/");
+        this.props.history.push("/dashboard"); //or directly to dashboard?
       })
       .catch((error) => {
         console.log(error);
@@ -47,7 +47,7 @@ class FormSignin extends Component {
         <input type="email" id="email" name="email" onChange={this.handleChange} value={this.state.email} />
         <label htmlFor="password">Password</label>
         <input type="password" id="password" name="password" onChange={this.handleChange} value={this.state.password} />
-        <Button variant="contained" color="primary">Submit</Button>
+        <button>Submit</button>
       </form>
 
     );

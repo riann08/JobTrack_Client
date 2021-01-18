@@ -8,7 +8,7 @@ export class FormJob extends Component {
 
   state = {
     company: "",
-    jobTitle: "",
+    jobTitle: "",   
     jobDescription: "",
     contactPerson: { name: "", phone: "", email: "" },
     website: "",
@@ -16,6 +16,24 @@ export class FormJob extends Component {
     status: "To apply for",
     cvSentDate: ""
   };
+
+  componentDidMount() {
+    console.log(this.props);
+    const jobId = this.props.match.params.id;
+
+    apiHandler.getJobInfo(jobId)
+      .then((apiResponse) => {
+        console.log(apiResponse);
+   //     const job = apiResponse.data;
+        this.setState({
+        
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
 
   handleChange = (event) => {
     const name = event.target.name;
@@ -29,7 +47,7 @@ export class FormJob extends Component {
     event.preventDefault();
 
     apiHandler
-      .createJob({
+      .updateJob({
         company: this.state.company,
         jobTitle: this.state.jobTitle,
         jobDescription: this.state.jobDescription,
@@ -44,6 +62,7 @@ export class FormJob extends Component {
 
       .then((apiResponse) => {
         console.log(apiResponse);
+        this.props.history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -57,26 +76,26 @@ export class FormJob extends Component {
         <form className="FormJob__form flex--column" onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="">Company Name</label>
-            <input onChange={this.handleChange} type="text" name="company" value={this.state.company} />
           </div>
           <div>
             <label htmlFor="">Job Title</label>
-            <input onChange={this.handleChange} type="string" name="jobTitle" value={this.state.jobTitle} />
           </div>
           <div>
+            <input onChange={this.handleChange} type="text" name="company" defaultValue={this.state.company} />
             <label htmlFor="">Job Description</label>
-            <input onChange={this.handleChange} type="text" name="jobDescription" value={this.state.jobDescription} />
+            <input onChange={this.handleChange} type="text" name="jobDescription" defaultValue={this.state.jobDescription} />
           </div>
+            <input onChange={this.handleChange} type="string" name="jobTitle" defaultValue={this.state.jobTitle} />
 
           <div className="contact flex--column">
             <p>Contact person</p>
             <label htmlFor="">Name</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.name" value={this.state.name} />
+            <input onChange={this.handleChange} type="text" name="contactPerson.name" defaultValue={this.state.name} />
 
             <label htmlFor="">Phone number</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.phone" value={this.state.phone} />
+            <input onChange={this.handleChange} type="text" name="contactPerson.phone" defaultValue={this.state.phone} />
             <label htmlFor="">Email</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.email" value={this.state.email} />
+            <input onChange={this.handleChange} type="text" name="contactPerson.email" defaultValue={this.state.email} />
           </div>
 
           <div>
@@ -85,10 +104,11 @@ export class FormJob extends Component {
           <textarea name="notes" value={this.state.notes} onChange={this.handleChange} />
             </label>
           </div>
+          
           <div>
             <label>
               Select status:
-          <select value={this.state.status} onChange={this.handleChange}>
+          <select defaultValue={this.state.status} onChange={this.handleChange}>
                 <option value="apply">To Apply For</option>
                 <option value="sent">CV Sent </option>
                 <option value="follow">To Follow Up</option>
@@ -102,7 +122,7 @@ export class FormJob extends Component {
 
           <div>
             <label htmlFor="">CV sent on  </label>
-            <input onChange={this.handleChange} type="date" name="cvSentDate" value={this.state.cvSentDate} />
+            <input onChange={this.handleChange} type="date" name="cvSentDate" defaultValue={this.state.cvSentDate} />
           </div>
 
           <Button variant="contained" color="primary">Submit !</Button>

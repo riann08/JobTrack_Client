@@ -1,43 +1,44 @@
 import React from "react";
-import apiHandler from "../api/apiHandler";
-import { withRouter } from "react-router-dom"
+import { withRouter, Link } from "react-router-dom"
 
-function JobCard() {
-  console.log(this.props.jobs);
-  
-  return (
+class JobCard extends React.Component {
+  //console.log(this.props);
 
+  // TO Do: transofrm this into a stateful component (class)`
+  // get all the jobs from the DB. (probably in componentdidmount)
+  // set the state with the jobs from the db
 
+  //get all job details from Dashboard
 
-  // componentDidMount() {
-  //   console.log(this.props);
-  //   const jobId = this.props.params.id;
-  //   apiHandler.getJobDetails(jobId)
-  //     .then((apiResponse) => {
-  //       setTimeout(() => {
-  //         this.setState({
-  //           job: apiResponse.data,
-  //         });
-  //       }, 1000);
-  //     });
-  // }
+  render() {
+    return (
 
-
-  
       <div>
         <h2>Welcome to the job page</h2>
         <div>
-          <div className="JobCard__header"><h2>{this.props.jobs.jobTitle}</h2>
-            <p>{this.props.jobs.jobDescription}</p>
+          <div className="JobCard__header"><h2>{this.props.job.jobTitle}</h2>
+            <p>{this.props.job.jobDescription}</p>
           </div>
-          <p>{this.props.jobs.website}</p>
-          <p>{this.props.jobs.contactPerson}</p>
-          <p>{this.props.jobs.notes}</p>
-          <p>{this.props.jobs.status}</p>
-          <p>{this.props.jobs.cvSentDate}</p>
+          <p>{this.props.job.website}</p>
+          <p>{this.props.job.contactPerson}</p>
+
+          <Link to="/job/:id">
+            See more...
+          </Link>
+
+          <Link to="/job/:id/edit">
+            Edit
+          </Link>
+
+          <Link to="/job/:id/delete">
+            Delete
+          </Link>
         </div>
       </div>
     );
+
+
   }
+}
 
 export default withRouter(JobCard);

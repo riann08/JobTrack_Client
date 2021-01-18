@@ -8,6 +8,9 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
 import NotFound from "./pages/NotFound.jsx";
+import FormUpdateUser from "./components/Forms/FormUpdateUser";
+import FormJobUpdate from "./components/Forms/FormJobUpdate";
+import FormJob from "./components/Forms/FormJob";
 
 function App() {
   return (
@@ -17,9 +20,17 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/signup" component={Signup} />
-        <Route exact path="/auth/logout" />
-        <ProtectedRoute exact path="/profile" component={Profile} />
+        <Route exact path="/auth/logout"/>
+
+        {/* ProtectedRoute */}
+        <Route exact path="/profile/me" component={Profile} />
+        <Route exact path="/job" component={Dashboard} />
+        <Route exact path="/job/create" component={FormJob} />
+        <Route exact path="/job/:id/edit" component={FormJobUpdate} />
+        <Route exact path="/job/:id/delete" component={FormJob} />
         <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/profile/:id/edit" component={FormUpdateUser} />
+
         <Route path="*" component={NotFound} />
          </Switch>
     </div>
