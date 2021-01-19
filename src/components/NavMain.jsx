@@ -29,8 +29,13 @@ const NavMain = (props) => {
           <React.Fragment>
                 <li>{"Hello, " + context.user.email + "! :)" && "Hello, " + context.user.userName + "! :)"}</li>
             <li>
-              <NavLink to="/profile/me">
+              <NavLink to="/profile">
                 My Profile
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/job/create">
+                Add A New Job
               </NavLink>
             </li>
             <li>

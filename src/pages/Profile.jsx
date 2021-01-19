@@ -1,22 +1,20 @@
 import React from "react";
-import FormUpdateUser from "../components/Forms/FormUpdateUser";
-import FormProfile from "../components/Forms/FormProfile";
+import FormUpdateUser from "../components/Forms/FormUpdateUser"
 import apiHandler from "../api/apiHandler";
-//import UserContext from "../Auth/UserContext";
+import {withUser} from "../components/Auth/withUser";
 
 class Profile extends React.Component {
 
   state={
-    users: null
+   user : []
   }
   
   componentDidMount(){
-
+console.log(this.props)
     // console.log(this.props.match.params.id);
-    // const userId = this.props.match.params.id;
+    const userId = this.context.user._id;
 
-    apiHandler.getUser()
-    console.log(this.props)
+    apiHandler.getUserInfo(userId)
         .then((responseFromApi) => {
             console.log(responseFromApi);
             
@@ -28,12 +26,16 @@ class Profile extends React.Component {
 render(){
   return (
     <div>
-      <h1>THIS IS MY PROFILE WHEN SIGNED IN </h1>
-      <FormUpdateUser users={this.state.users} />
-      <FormProfile users={this.state.users}/>
+      <h1>THIS IS MY PROFILE WHEN SIGNED IN 
+        {this.props.name}
+      </h1>
+     <FormUpdateUser users={this.state.users} />
+     
+     <button>Edit</button>
+
     </div>
   );
 };
 };
 
-export default Profile;
+export default withUser(Profile);

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import apiHandler from "../../api/apiHandler";
-import Button from '@material-ui/core/Button';
 import { UserContext } from "../Auth/UserContext";
 
 export class FormJob extends Component {
@@ -13,7 +12,7 @@ export class FormJob extends Component {
     contactPerson: { name: "", phone: "", email: "" },
     website: "",
     notes: "",
-    status: "To apply for",
+    status: "",
     cvSentDate: ""
   };
 
@@ -33,9 +32,9 @@ export class FormJob extends Component {
         company: this.state.company,
         jobTitle: this.state.jobTitle,
         jobDescription: this.state.jobDescription,
-        contactPerson: {name :this.state.contactPerson.name, 
+        contactPerson: [{name :this.state.contactPerson.name, 
           phone: this.state.contactPerson.phone, 
-          email :this.state.contactPerson.email},
+          email :this.state.contactPerson.email}],
         website: this.state.website,
         notes: this.state.notes,
         cvSentDate: this.state.cvSentDate,
@@ -44,6 +43,7 @@ export class FormJob extends Component {
 
       .then((apiResponse) => {
         console.log(apiResponse);
+        this.props.history.push("/dashboard");
       })
       .catch((err) => {
         console.log(err);
@@ -53,7 +53,7 @@ export class FormJob extends Component {
   render() {
     return (
 
-      <div className="FormJob flex--column">
+      <div className="FormJob flex--column">  
         <form className="FormJob__form flex--column" onSubmit={this.handleSubmit}>
           <div>
             <label htmlFor="">Company Name</label>
@@ -88,14 +88,14 @@ export class FormJob extends Component {
           <div>
             <label>
               Select status:
-          <select value={this.state.status} onChange={this.handleChange}>
-                <option value="apply">To Apply For</option>
-                <option value="sent">CV Sent </option>
-                <option value="follow">To Follow Up</option>
-                <option value="interview">For Interview</option>
-                <option value="offer">For Job Offer</option>
-                <option value="accepted">Job Accepted</option>
-                <option value="rejected">Job Rejected</option>
+          <select name ="status" value={this.state.status} onChange={this.handleChange}>
+                <option value="To Apply For">To Apply For</option>
+                <option value="CV Sent">CV Sent </option>
+                <option value="To Follow-Up">To Follow Up</option>
+                <option value="For Interview">For Interview</option>
+                <option value="For Job Offer">For Job Offer</option>
+                <option value="Accepted">Accepted</option>
+                <option value="Rejected">Rejected</option>
               </select>
             </label>
           </div>
@@ -105,7 +105,7 @@ export class FormJob extends Component {
             <input onChange={this.handleChange} type="date" name="cvSentDate" value={this.state.cvSentDate} />
           </div>
 
-          <Button variant="contained" color="primary">Submit !</Button>
+          <button>Submit !</button>
         </form>
       </div>
     );

@@ -39,3 +39,20 @@
 .Dashboard__search{
     justify-content: space-between;
 }
+
+.Dashboard__main{
+    background-color:rgba(255, 247, 247, 0.938);
+    flex-grow: 1;
+    flex-wrap: wrap;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    
+
+}
+
+.JobCard{
+    border: blue 1px solid;
+    width: 200px;
+    margin: 10px;
+}

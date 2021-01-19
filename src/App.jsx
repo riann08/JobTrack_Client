@@ -7,6 +7,7 @@ import Signup from "./pages/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
+import JobDetails from "./pages/JobDetails.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import FormUpdateUser from "./components/Forms/FormUpdateUser";
 import FormJobUpdate from "./components/Forms/FormJobUpdate";
@@ -23,12 +24,14 @@ function App() {
         <Route exact path="/auth/logout"/>
 
         {/* ProtectedRoute */}
-        <Route exact path="/profile/me" component={Profile} />
+        <Route exact path="/profile/:id" component={Profile} />
         <Route exact path="/job" component={Dashboard} />
         <Route exact path="/job/create" component={FormJob} />
         <Route exact path="/job/:id/edit" component={FormJobUpdate} />
+        <Route exact path="/job/:id/delete"/>
         <ProtectedRoute exact path="/dashboard" component={Dashboard} />
         <Route exact path="/profile/:id/edit" component={FormUpdateUser} />
+        <Route exact path="/job/:id" component={JobDetails} />
 
         <Route path="*" component={NotFound} />
          </Switch>

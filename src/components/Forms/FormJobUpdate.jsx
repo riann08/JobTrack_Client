@@ -11,16 +11,16 @@ export class FormJobUpdate extends Component {
     contactPerson: { name: "", phone: "", email: "" },
     website: "",
     notes: "",
-    status: "To apply for",
+    status: "",
     cvSentDate: ""
   };
 
   componentDidMount() {
     console.log(this.props);
     const jobId = this.props.match.params.id;
-
+    
     apiHandler.getJobInfo(jobId)
-      .then((apiResponse) => {
+         .then((apiResponse) => {
        this.setState( {
         company: apiResponse.company,
         jobTitle: apiResponse.jobTitle,
@@ -42,9 +42,9 @@ export class FormJobUpdate extends Component {
 //update
   handleChange = (event) => {
     const name = event.target.name;
-    const defaultValue = event.target.defaultvalue;
+    const value = event.target.value;
     this.setState({
-      [name]: defaultValue,
+      [name]: value,
     });
   };
 
@@ -55,7 +55,7 @@ export class FormJobUpdate extends Component {
 const jobId = this.props.match.params.id;
 
     apiHandler
-      .updateJob(jobId, this.state )
+      .updateJob(jobId, this.state) 
       .then((apiResponse) => {
         console.log(apiResponse);
         this.props.history.push("/dashboard");
@@ -77,21 +77,21 @@ const jobId = this.props.match.params.id;
             <label htmlFor="">Job Title</label>
           </div>
           <div>
-            <input onChange={this.handleChange} type="text" name="company" defaultValue={this.state.company} />
+            <input onChange={this.handleChange} type="text" name="company" value={this.state.company} />
             <label htmlFor="">Job Description</label>
-            <input onChange={this.handleChange} type="text" name="jobDescription" defaultValue={this.state.jobDescription} />
+            <input onChange={this.handleChange} type="text" name="jobDescription" value={this.state.jobDescription} />
           </div>
-            <input onChange={this.handleChange} type="string" name="jobTitle" defaultValue={this.state.jobTitle} />
+            <input onChange={this.handleChange} type="string" name="jobTitle" value={this.state.jobTitle} />
 
           <div className="contact flex--column">
             <p>Contact person</p>
             <label htmlFor="">Name</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.name" defaultValue={this.state.contactPerson.name} />
+            <input onChange={this.handleChange} type="text" name="contactPerson.name" value={this.state.contactPerson.name} />
 
             <label htmlFor="">Phone number</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.phone" defaultValue={this.state.contactPerson.phone} />
+            <input onChange={this.handleChange} type="text" name="contactPerson.phone" value={this.state.contactPerson.phone} />
             <label htmlFor="">Email</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.email" defaultValue={this.state.contactPerson.email} />
+            <input onChange={this.handleChange} type="text" name="contactPerson.email" value={this.state.contactPerson.email} />
           </div>
 
           <div>
@@ -104,14 +104,14 @@ const jobId = this.props.match.params.id;
           <div>
             <label>
               Select status:
-          <select defaultValue={this.state.status} onChange={this.handleChange}>
-                <option value="apply">To Apply For</option>
-                <option value="sent">CV Sent </option>
-                <option value="follow">To Follow Up</option>
-                <option value="interview">For Interview</option>
-                <option value="offer">For Job Offer</option>
-                <option value="accepted">Job Accepted</option>
-                <option value="rejected">Job Rejected</option>
+          <select  name="status" value={this.state.status} onChange={this.handleChange}>
+                <option value="To Apply For">To Apply For</option>
+                <option value="CV Sent ">CV Sent </option>
+                <option value="To Follow-Up">To Follow Up</option>
+                <option value="For Interview">For Interview</option>
+                <option value="For Job Offer">For Job Offer</option>
+                <option value="Accepted">Job Accepted</option>
+                <option value="Rejected">Job Rejected</option>
               </select>
             </label>
           </div>
@@ -119,7 +119,7 @@ const jobId = this.props.match.params.id;
           <div>
             <label htmlFor="">CV sent on  </label>
             <input onChange={this.handleChange} type="date" name="cvSentDate" 
-            defaultValue={this.state.cvSentDate} />
+            value={this.state.cvSentDate} />
           </div>
 
           <button>Submit !</button>

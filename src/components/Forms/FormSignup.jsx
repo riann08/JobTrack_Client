@@ -11,7 +11,7 @@ class FormSignup extends Component {
     userName: "",
     email: "",
     password: "",
-    profileImg: "",
+    //profileImg: "",
   };
 
   handleChange = (event) => {
@@ -69,14 +69,14 @@ class FormSignup extends Component {
           name="password"
         />
         
-        <label htmlFor="profileImg">Profile Image</label>
+        {/* <label htmlFor="profileImg">Profile Image</label>
         <input
           onChange={this.handleChange}
           value={this.state.profileImg}
           type="file"
           id="profileImg"
           name="profileImg"
-        />
+        /> */}
         <button variant="contained" color="primary">Join</button>
 
         <p>Already have an account?</p> <NavLink to="/signin">Log in</NavLink>
