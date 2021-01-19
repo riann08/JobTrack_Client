@@ -16,22 +16,23 @@ export class FormJobUpdate extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props);
     const jobId = this.props.match.params.id;
     
     apiHandler.getJobInfo(jobId)
-         .then((apiResponse) => {
+    .then((apiResponse) => {
+      console.log(apiResponse);
+      const job = apiResponse;
        this.setState( {
-        company: apiResponse.company,
-        jobTitle: apiResponse.jobTitle,
-        jobDescription: apiResponse.jobDescription,
-        contactPerson: {name: apiResponse.contactPerson.name, 
-          phone: apiResponse.contactPerson.phone, 
-          email:apiResponse.contactPerson.email},
-        website: apiResponse.website,
-        notes: apiResponse.notes,
-        cvSentDate: apiResponse.cvSentDate,
-        status: apiResponse.status
+        company: job.company,
+        jobTitle: job.jobTitle,
+        jobDescription: job.jobDescription,
+        contactPerson_Name: job.contactPerson_Name, 
+        contactPerson_Phone: job.contactPerson_Phone, 
+        contactPerson_Email:job.contactPerson_Email,
+        website: job.website,
+        notes: job.notes,
+        cvSentDate: job.cvSentDate,
+        status: job.status
        })
       })
       .catch((error) => {
@@ -86,12 +87,12 @@ const jobId = this.props.match.params.id;
           <div className="contact flex--column">
             <p>Contact person</p>
             <label htmlFor="">Name</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.name" value={this.state.contactPerson.name} />
+            <input onChange={this.handleChange} type="text" name="contactPerson_Name" value={this.state.contactPerson_Name} />
 
             <label htmlFor="">Phone number</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.phone" value={this.state.contactPerson.phone} />
+            <input onChange={this.handleChange} type="text" name="contactPerson_Phone" value={this.state.contactPerson_Phone} />
             <label htmlFor="">Email</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.email" value={this.state.contactPerson.email} />
+            <input onChange={this.handleChange} type="text" name="contactPerson_Email" value={this.state.contactPerson_Email} />
           </div>
 
           <div>

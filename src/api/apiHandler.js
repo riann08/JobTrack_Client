@@ -83,7 +83,14 @@ export default {
       .catch(errorHandler);
   },
 
-  getUserInfo(userId) {
+  getUsers() {
+    return service
+      .get("/user")
+      .then((res) => res.data)
+      .catch(errorHandler);
+  },
+
+ getUserInfo(userId) {
     return service
       .get(`/user/${userId}`)
       .then((res) => res.data)

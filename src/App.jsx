@@ -24,7 +24,7 @@ function App() {
         <Route exact path="/auth/logout"/>
 
         {/* ProtectedRoute */}
-        <Route exact path="/profile/:id" component={Profile} />
+        <Route exact path="/profile" component={Profile} />
         <Route exact path="/job" component={Dashboard} />
         <Route exact path="/job/create" component={FormJob} />
         <Route exact path="/job/:id/edit" component={FormJobUpdate} />

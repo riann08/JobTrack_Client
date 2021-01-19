@@ -9,7 +9,9 @@ export class FormJob extends Component {
     company: "",
     jobTitle: "",
     jobDescription: "",
-    contactPerson: { name: "", phone: "", email: "" },
+    contactPerson_Name:"",
+    contactPerson_Email: "",
+    contactPerson_Phone: "",
     website: "",
     notes: "",
     status: "",
@@ -32,9 +34,9 @@ export class FormJob extends Component {
         company: this.state.company,
         jobTitle: this.state.jobTitle,
         jobDescription: this.state.jobDescription,
-        contactPerson: [{name :this.state.contactPerson.name, 
-          phone: this.state.contactPerson.phone, 
-          email :this.state.contactPerson.email}],
+        contactPerson_Name :this.state.contactPerson_Name, 
+        contactPerson_Phone: this.state.contactPerson_Phone, 
+        contactPerson_Email :this.state.contactPerson_Email,
         website: this.state.website,
         notes: this.state.notes,
         cvSentDate: this.state.cvSentDate,
@@ -71,12 +73,12 @@ export class FormJob extends Component {
           <div className="contact flex--column">
             <p>Contact person</p>
             <label htmlFor="">Name</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.name" value={this.state.name} />
+            <input onChange={this.handleChange} type="text" name="contactPerson_Name" value={this.state.contactPerson_Name} />
 
             <label htmlFor="">Phone number</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.phone" value={this.state.phone} />
+            <input onChange={this.handleChange} type="text" name="contactPerson_Phone" value={this.state.contactPerson_Phone} />
             <label htmlFor="">Email</label>
-            <input onChange={this.handleChange} type="text" name="contactPerson.email" value={this.state.email} />
+            <input onChange={this.handleChange} type="text" name="contactPerson_Email" value={this.statecontactPerson_Email} />
           </div>
 
           <div>

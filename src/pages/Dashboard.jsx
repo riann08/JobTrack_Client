@@ -8,6 +8,7 @@ import { withUser } from "../components/Auth/withUser";
 class Dashboard extends React.Component {
     state = {
         jobs: [],
+        user:[],
     }
 
     componentDidMount() {
@@ -19,8 +20,23 @@ class Dashboard extends React.Component {
                 this.setState({
                     jobs: responseFromApi,
                 });
-            });
-    }
+            })
+            .catch((error) => {
+                console.log(error);
+              });
+
+    //     apiHandler.getUsers()
+    //         .then((usersFromApi) => {
+    //             console.log(usersFromApi);
+
+    //             this.setState({
+    //                 jobs: usersFromApi,
+    //             });
+    //         })
+    //         .catch((error) => {
+    //             console.log(error);
+    //           });
+     }
     render() {
 
         if (this.state.jobs === null) {

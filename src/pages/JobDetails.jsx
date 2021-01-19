@@ -4,7 +4,9 @@ import { withRouter, Link } from "react-router-dom"
 
 export class JobDetails extends Component {
     state = {
-       job : []
+       job : [
+
+       ]
     }
 
     componentDidMount() {
@@ -33,9 +35,9 @@ const jobId = this.props.match.params.id;
                    <p>{this.state.jobTitle}</p>
                
         <h3> Contact Person: </h3>
-        {/* <p>Name: {this.state.contactPerson.name} </p>
-        <p>Email: {this.state.contactPerson.email}</p>
-        <p>Phone: {this.state.contactPerson.phone }</p> */}
+        <p>Name: {this.state.contactPerson_Name} </p>
+        <p>Email: {this.state.contactPerson_Email}</p>
+        <p>Phone: {this.state.contactPerson_Phone }</p>
         <p>Website: {this.state.website} </p>
         <p>Notes: {this.state.notes}</p>
         <p>CV Sent Date: {this.state.cvSentDate}</p>

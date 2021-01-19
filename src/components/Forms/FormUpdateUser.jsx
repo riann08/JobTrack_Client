@@ -17,7 +17,7 @@ class FormUpdateUser extends Component {
     // console.log(this.context.user._id);
     // console.log("test" + this.props.match.params.id);
     const userId = this.context.user._id;
-    ;
+    
     
     apiHandler
     .getUserInfo(userId)
@@ -48,7 +48,7 @@ class FormUpdateUser extends Component {
     event.preventDefault();
 
     apiHandler
-      .updateUser(this.state)
+      .updateUser(this.context.user._id, this.state)
       .then((data) => {
         this.context.setUser(data);
         this.props.history.push("/profile");
@@ -59,9 +59,9 @@ class FormUpdateUser extends Component {
   };
 
   render() {
-    if (this.context.user) {
-      return <Redirect to="/dashboard" />;
-    }
+    // if (this.context.user) {
+    //   return <Redirect to="/" />;
+    // }
 
     return (
       <form className="flex--column"

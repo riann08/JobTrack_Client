@@ -28,7 +28,7 @@
 }
 
 .contact{
-    background-color: rgba(244, 253, 253, 0.877);
+    background-color: rgba(99, 231, 231, 0.877);
     width: 100%;
     border: 50px;
     margin: 10px;
@@ -51,8 +51,21 @@
 
 }
 
-.JobCard{
-    border: blue 1px solid;
+/* .JobCard{
+    /* border: blue 1px solid;
     width: 200px;
-    margin: 10px;
-}
+    margin: 10px;} */
+
+
+.JobCard {
+    background-color: whitesmoke;
+    border-radius: 4px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    padding: 25px 25px 15px 25px;
+    transition: 0.5s;
+  }
+
+  .JobCard:hover {
+    box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
+    transform: scale(0,85);}
