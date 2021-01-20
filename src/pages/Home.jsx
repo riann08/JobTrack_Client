@@ -6,8 +6,8 @@ class Home extends React.Component {
     return (
       <>    
       <div className="Home flex--row">
-        /* <img className="img__Home" src="/assets/images/mybackdrop.jpg" alt="backdrop home" /> */
-      <FormSignUp />
+        <img className="Home__img" src="/images/undraw_job_offers_kw5d.svg" alt="home page pic"/>
+         <FormSignUp />
       
         </div>
       </>

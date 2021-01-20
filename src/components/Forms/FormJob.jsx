@@ -14,7 +14,7 @@ export class FormJob extends Component {
     contactPerson_Phone: "",
     website: "",
     notes: "",
-    status: "",
+    status: "To Apply For",
     cvSentDate: ""
   };
 
@@ -63,13 +63,28 @@ export class FormJob extends Component {
           </div>
           <div>
             <label htmlFor="">Job Title</label>
-            <input onChange={this.handleChange} type="string" name="jobTitle" value={this.state.jobTitle} />
+            <input onChange={this.handleChange} type="text" name="jobTitle" value={this.state.jobTitle} />
           </div>
           <div>
             <label htmlFor="">Job Description</label>
-            <input onChange={this.handleChange} type="text" name="jobDescription" value={this.state.jobDescription} />
+            <textarea onChange={this.handleChange} type="text" name="jobDescription" value={this.state.jobDescription} />
           </div>
 
+
+          <div>
+            <label>
+              Website
+          <input name="website" type="text" value={this.state.website} onChange={this.handleChange} />
+            </label>
+          </div>
+          <div>
+            <label>
+              Notes
+          <textarea name="notes" value={this.state.notes} onChange={this.handleChange} />
+            </label>
+          </div>
+          <div>
+            <label>
           <div className="contact flex--column">
             <p>Contact person</p>
             <label htmlFor="">Name</label>
@@ -80,15 +95,6 @@ export class FormJob extends Component {
             <label htmlFor="">Email</label>
             <input onChange={this.handleChange} type="text" name="contactPerson_Email" value={this.statecontactPerson_Email} />
           </div>
-
-          <div>
-            <label>
-              Notes
-          <textarea name="notes" value={this.state.notes} onChange={this.handleChange} />
-            </label>
-          </div>
-          <div>
-            <label>
               Select status:
           <select name ="status" value={this.state.status} onChange={this.handleChange}>
                 <option value="To Apply For">To Apply For</option>

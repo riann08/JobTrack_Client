@@ -6,15 +6,32 @@
   }
 
 .FormSignup{
-    border: blue 1px solid;
+    border: #00BFA6 1px solid;
+    box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
+
+    border-radius: 10px;
     width: 400px;
     height: 400px;
 
 }
 
-.img__Home{
+.FormSignIn{
+    border: #00BFA6 1px solid;
+    box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
+    border-radius: 10px;
     width: 400px;
-    height:400px;
+    display: flex;
+
+height: 200px}
+
+
+
+.Home{ 
+    justify-content: space-around;}
+
+.Home__img{
+    width: 400px;
+    height:800px;
 }
 
 .FormJob{
@@ -26,6 +43,15 @@
     border: azure 3px solid;
 
 }
+
+grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 17px;
+    grid-template-areas:
+      ". . .";
+  }
 
 .contact{
     background-color: rgba(99, 231, 231, 0.877);
@@ -68,4 +94,13 @@
 
   .JobCard:hover {
     box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
-    transform: scale(0,85);}
+    transform: scale(1)}
+
+    .Profile{
+        border-radius: 5px;
+        border: 1px solid #00303F;
+        width: 350px;
+        height: 500px;  
+        color:black;
+
+    }

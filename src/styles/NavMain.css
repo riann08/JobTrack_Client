@@ -5,9 +5,10 @@
   align-items: center;
   padding: 20px;
   height: 70px;
-  position: fixed;
-  top:0;
-  z-index:100
+  position: sticky;
+  top: 0;
+  background-color: white;
+  box-shadow: 5px 1px 5px 1px rgb(173, 196, 211);
 }
 
 .NavMain .nav-list {
