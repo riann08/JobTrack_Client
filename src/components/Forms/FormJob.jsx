@@ -107,11 +107,11 @@ export class FormJob extends Component {
               </select>
             </label>
           </div>
-
+{this.state.status === "CV Sent" &&(
           <div>
             <label htmlFor="">CV sent on  </label>
             <input onChange={this.handleChange} type="date" name="cvSentDate" value={this.state.cvSentDate} />
-          </div>
+          </div>)}
 
           <button>Submit !</button>
         </form>

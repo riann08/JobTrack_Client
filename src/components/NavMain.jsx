@@ -25,7 +25,7 @@ const NavMain = (props) => {
         <h3 className="logo">JOB TRACKER</h3>
       </NavLink>
       <ul className="nav-list">
-        {context.isLoggedIn && (
+        {context.isLoggedIn && context.user &&(
           <React.Fragment>
                 <li>{"Hello, " + context.user.email + "! :)" && "Hello, " + context.user.userName + "! :)"}</li>
             <li>

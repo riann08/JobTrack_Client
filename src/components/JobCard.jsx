@@ -27,7 +27,7 @@ handleDelete = (id) => {
       return <div>Loading.....</div>;}
     return (  
 
-      <div className="JobCard flex--column " key={this.props._id}>
+      <div className="JobCard flex--column" key={this.props._id}>
         <div>
           <div className="JobCard__header flex--column"><h3>{this.props.job.company}</h3>
           <h3>{this.props.job.jobTitle}</h3>

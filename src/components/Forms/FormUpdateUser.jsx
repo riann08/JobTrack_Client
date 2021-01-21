@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { withRouter} from "react-router-dom";
 import { UserContext } from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 
@@ -64,6 +64,8 @@ class FormUpdateUser extends Component {
     // }
 
     return (
+
+      <div className="FormUpdateUser flex--column">
       <form className="flex--column"
         onSubmit={this.handleSubmit}>
         <label htmlFor="userName">User Name</label>
@@ -101,10 +103,9 @@ class FormUpdateUser extends Component {
         />
         <button>Submit</button>
 
-
-      </form>
-
-
+             </form>
+<button onClick={this.handleDelete}>Delete</button>
+</div>
     );
   }
 }

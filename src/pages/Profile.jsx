@@ -1,5 +1,5 @@
 import React from "react";
-import FormUpdateUser from "../components/Forms/FormUpdateUser"
+//import FormUpdateUser from "../components/Forms/FormUpdateUser"
 import {Link} from "react-router-dom"
 import {withUser} from "../components/Auth/withUser";
 
