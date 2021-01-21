@@ -7,7 +7,7 @@ class JobCard extends React.Component {
 
   state = {
     jobs: [],
- };
+  };
 
   render() {
     if (!this.state.jobs) {
@@ -17,9 +17,10 @@ class JobCard extends React.Component {
 
       <div className="JobCard flex--column" key={this.props._id}>
         <div>
-          <div className="JobCard__header flex--column"><h3>{this.props.job.company}</h3>
-            <h3>{this.props.job.jobTitle}</h3>
-            <p>{this.props.job.jobDescription}</p> <p>{this.props.job.website}</p>
+          <div className="JobCard__header flex--column">
+            <h3>{this.props.job.company}</h3>
+            <h4>{this.props.job.jobTitle}</h4>
+            <p>{this.props.job.location}</p>
             <hr />
           </div>
 
@@ -27,15 +28,15 @@ class JobCard extends React.Component {
           <Link to={"/job/" + this.props.job._id}>
             See more...
           </Link>
+          <div className="JobCard__buttonDiv flex--row"  >
+            <button className="blueBtn"><Link to={"/job/" + this.props.job._id + "/edit"} >
+              Edit
+          </Link></button>
 
-          <Link to={"/job/" + this.props.job._id + "/edit"} >
-            Edit
-          </Link>
-
-
-          <button onClick={() => this.props.delete(this.props.job._id)}>
-            Delete
+            <button id="deleteBtn" onClick={() => this.props.delete(this.props.job._id)}>
+              Delete
                   </button>
+          </div>
 
 
 

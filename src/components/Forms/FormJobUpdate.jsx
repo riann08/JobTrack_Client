@@ -29,6 +29,7 @@ export class FormJobUpdate extends Component {
           contactPerson_Name: job.contactPerson_Name,
           contactPerson_Phone: job.contactPerson_Phone,
           contactPerson_Email: job.contactPerson_Email,
+          location: job.location,
           website: job.website,
           notes: job.notes,
           cvSentDate: job.cvSentDate,
@@ -70,58 +71,53 @@ export class FormJobUpdate extends Component {
     return (
 
       <div className="FormJob flex--column">
-        <form className="FormJob__form flex--column" onSubmit={this.handleSubmit}>
-          <div>
-            <label className="FormJob__form __label" >Company Name</label>
-            <input onChange={this.handleChange} type="text" name="company" value={this.state.company} />
-          </div>
-          <div>
-            <label className="FormJob__form __label">Job Title</label>
-            <input onChange={this.handleChange} type="string" name="jobTitle" value={this.state.jobTitle} />
-          </div>
-          <div>
-            <label className="FormJob__form __label">Job Description</label>
-            <input onChange={this.handleChange} type="text" name="jobDescription" value={this.state.jobDescription} />
-          </div>
+        <h3>Edit</h3>
 
-          <div className="contact flex--column">
-            <p>Contact person</p>
-            <label className="FormJob__form __label">Name</label>
+        <form className="FormJobUpdate flex--column" onSubmit={this.handleSubmit}>
+
+          <label>Company Name</label>
+          <input onChange={this.handleChange} type="text" name="company" value={this.state.company} />
+
+          <label>Job Title</label>
+          <input onChange={this.handleChange} type="string" name="jobTitle" value={this.state.jobTitle} />
+
+          <label>Job Location</label>
+          <input onChange={this.handleChange} type="text" name="location" value={this.state.location} />
+
+          <label>Job Description</label>
+          <input onChange={this.handleChange} type="text" name="jobDescription" value={this.state.jobDescription} />
+
+
+          <div className=" flex--column">
+            <h4>Contact person</h4>
+            <label>Name</label>
             <input onChange={this.handleChange} type="text" name="contactPerson_Name" value={this.state.contactPerson_Name} />
 
-            <label className="FormJob__form __label">Phone number</label>
+            <label>Phone number</label>
             <input onChange={this.handleChange} type="text" name="contactPerson_Phone" value={this.state.contactPerson_Phone} />
-            <label className="FormJob__form __label">Email</label>
+
+            <label>Email</label>
             <input onChange={this.handleChange} type="text" name="contactPerson_Email" value={this.state.contactPerson_Email} />
           </div>
 
-          <div>
-            <label className="FormJob__form __label">
-              Notes
+          <label>Notes</label>
           <textarea name="notes" value={this.state.notes} onChange={this.handleChange} />
-            </label>
-          </div>
 
-          <div>
-            <label className="FormJob__form __label">
-              Select status:
+          <label>Select status: </label>
           <select name="status" value={this.state.status} onChange={this.handleChange}>
-                <option value="To Apply For">To Apply For</option>
-                <option value="CV Sent ">CV Sent </option>
-                <option value="To Follow-Up">To Follow Up</option>
-                <option value="For Interview">For Interview</option>
-                <option value="For Job Offer">For Job Offer</option>
-                <option value="Accepted">Job Accepted</option>
-                <option value="Rejected">Job Rejected</option>
-              </select>
-            </label>
-          </div>
+            <option value="To Apply For">To Apply For</option>
+            <option value="CV Sent ">CV Sent </option>
+            <option value="To Follow-Up">To Follow Up</option>
+            <option value="For Interview">For Interview</option>
+            <option value="For Job Offer">For Job Offer</option>
+            <option value="Accepted">Job Accepted</option>
+            <option value="Rejected">Job Rejected</option>
+          </select>
 
-          <div>
-            <label className="FormJob__form __label">CV sent on  </label>
+          {this.state.status === "CV Sent" && <div><label>CV sent on  </label>
             <input onChange={this.handleChange} type="date" name="cvSentDate"
-              value={this.state.cvSentDate} />
-          </div>
+              value={this.state.cvSentDate} /></div>}
+
 
           <button>Submit !</button>
         </form>

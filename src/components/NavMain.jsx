@@ -7,33 +7,33 @@ import "../styles/NavMain.css";
 
 const NavMain = (props) => {
   const { context } = props
-  
+
   function handleLogout() {
     apiHandler
-    .logout()
+      .logout()
       .then(() => {
         context.removeUser();
       })
       .catch((error) => {
         console.log(error);
       });
-    }
-    
-    return (
+  }
+
+  return (
     <nav className="NavMain">
       <NavLink exact to="/">
         <h3 className="logo">JOB TRACKER</h3>
       </NavLink>
       <ul className="nav-list">
-        {context.isLoggedIn && context.user &&(
+        {context.isLoggedIn && context.user && (
           <React.Fragment>
-                <li>{"Hello, " + context.user.email + "! :)" && "Hello, " + context.user.userName + "! :)"}</li>
+            <li>{"Hello, " + context.user.email + "! :)" && "Hello, " + context.user.userName + "! :)"}</li>
             <li>
               <NavLink to="/profile">
                 My Profile
               </NavLink>
             </li>
-            <li>
+            <li >
               <NavLink to="/job/create">
                 Add A New Job
               </NavLink>

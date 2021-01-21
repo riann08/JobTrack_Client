@@ -10,9 +10,10 @@
   border-radius: 10px;
   width: 400px;
   height: 400px;
+  margin-top: 50px;
 }
 
-.Form .FormSignin {
+.FormSignin {
   border: #00bfa6 1px solid;
   box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
   border-radius: 10px;
@@ -33,15 +34,17 @@
 .FormJob {
   font-size: 16px;
   padding: 20px;
-  width: 35%;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
   border: azure 3px solid;
   color: darkgray;
   text-align: left;
 }
 
 .__label {
+  color: blue;
 }
 
 .grid-container {
@@ -69,6 +72,16 @@
   justify-content: space-between;
   width: auto;
 }
+
+hr {
+  border: rgb(173, 196, 211) solid 1px;
+  box-shadow: 5px 1px 2px 1p rgb(199, 201, 202);
+}
+
+.Dashboard__column h3 {
+  text-align: center;
+  padding: 10px;
+}
 .Dashboard__search {
   justify-content: space-between;
   margin-top: 20px;
@@ -82,23 +95,66 @@
   width: auto;
 }
 
-/* .JobCard{
-    /* border: blue 1px solid;
-    width: 200px;
-    margin: 10px;} */
-
 .JobCard {
-  border: #cdac81 2px solid;
-  background-color: #cae4db;
+  border: #e9ebf2 2px solid;
+  background-color: white;
   border-radius: 4px;
   margin-top: 8px;
   margin-bottom: 5px;
-  padding: 25px 25px 15px 25px;
+  padding: 10px;
   transition: 0.5s;
+  width: 95%;
+  align-content: center;
 }
 
+.JobCard__buttonDiv {
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+}
+.blueBtn {
+  margin: 20px;
+  width: 80px;
+  height: auto;
+  padding: 0 5px;
+  font-size: 14x;
+  background-color: #bcf2e2;
+  border: black 1px solid;
+  border-radius: 5px;
+  color: #282c33;
+}
+
+.FormSignin__btn {
+  width: 100px;
+  height: auto;
+  padding: 0 5px;
+  font-size: 14x;
+  background-color: #bcf2e2;
+  border: black 1px solid;
+  border-radius: 5px;
+  color: #282c33;
+  margin-top: 10px;
+}
+
+#deleteBtn {
+  width: 80px;
+  height: auto;
+  padding: 0 5px;
+  font-size: 14x;
+  border: black 1px solid;
+  border-radius: 5px;
+}
 .JobCard h3 {
-  color: #ec4646;
+  color: #282c33;
+  font: 16px;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+
+.JobCard h4 {
+  color: #3c414d;
+  font: 14px;
+  overflow-wrap: break-word;
 }
 
 .JobCard:hover {
@@ -118,4 +174,47 @@
   margin-top: 40px;
   width: 50%;
   height: 70%;
+}
+
+.FormJob__form label {
+  color: #3c414d;
+}
+
+.FormJob__form {
+  width: 50vw;
+}
+
+.FormJob_form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.FormJob_input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.FormJob_label {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.FormJobUpdate {
+  width: 550px;
+  height: auto;
+  padding: 40px;
+}
+
+.FormJobUpdate label {
+  color: #00bfa6;
 }

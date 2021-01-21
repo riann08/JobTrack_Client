@@ -88,6 +88,9 @@ class Dashboard extends React.Component {
 
                         return <div className="Dashboard__column" key={column.status}>
                             <h3>{column.status}</h3>
+                            <hr />
+
+
                             {column.jobs.map(job => <JobCard key={job._id} job={job} delete={this.handleDelete}
                             />)}
                         </div>

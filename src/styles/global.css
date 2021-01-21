@@ -8,7 +8,7 @@
 
 html {
   font-family: "Manrope", sans-serif;
-  color:grey;
+  color: grey;
 }
 
 a {
@@ -25,12 +25,18 @@ ul {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}  
+}
 
 .flex--row {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
-} 
+}
 
+@media only screen and (max-width: 600px) {
+  .Dashboard_main {
+    display: flex;
+    flex-direction: row;
+  }
+}

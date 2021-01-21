@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, Redirect, NavLink} from "react-router-dom";
+import { withRouter, Redirect, NavLink } from "react-router-dom";
 import { UserContext } from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 
@@ -41,35 +41,35 @@ class FormSignup extends Component {
 
     return (
 
-      <div className ="FormSignup flex--column">
-      <form className ="flex--column"
-       onSubmit={this.handleSubmit}>
-        <label htmlFor="userName">User Name</label>
-        <input
-          onChange={this.handleChange}
-          value={this.state.userName}
-          type="userName"
-          id="userName"
-          name="userName"
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          onChange={this.handleChange}
-          value={this.state.email}
-          type="email"
-          id="email"
-          name="email"
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={this.handleChange}
-          value={this.state.password}
-          type="password"
-          id="password"
-          name="password"
-        />
-        
-        {/* <label htmlFor="profileImg">Profile Image</label>
+      <div className="FormSignup flex--column">
+        <form className="flex--column"
+          onSubmit={this.handleSubmit}>
+          <label htmlFor="userName">User Name</label>
+          <input
+            onChange={this.handleChange}
+            value={this.state.userName}
+            type="userName"
+            id="userName"
+            name="userName"
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            onChange={this.handleChange}
+            value={this.state.email}
+            type="email"
+            id="email"
+            name="email"
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            onChange={this.handleChange}
+            value={this.state.password}
+            type="password"
+            id="password"
+            name="password"
+          />
+
+          {/* <label htmlFor="profileImg">Profile Image</label>
         <input
           onChange={this.handleChange}
           value={this.state.profileImg}
@@ -77,11 +77,11 @@ class FormSignup extends Component {
           id="profileImg"
           name="profileImg"
         /> */}
-        <button variant="contained" color="primary">Join</button>
+          <button className="blueBtn">Join</button>
 
-        <p>Already have an account?</p> <NavLink to="/signin">Log in</NavLink>
-      </form>
-</div>
+          <p>Already have an account?</p> <NavLink to="/signin">Log in</NavLink>
+        </form>
+      </div>
 
     );
   }
