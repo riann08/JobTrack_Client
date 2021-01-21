@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     searchValue :  "",
   };
 
-  handleChange = (event) => {
+  handleSearch = (event) => {
     const {name , value} = event.target;
        this.setState({
       [name]: value,
@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
     return (
       <form className="Searchbar flex--row" onSubmit={this.handleSubmit}>
         <div>
-          <input id="search" onChange={this.handleChange} type="search" name="search" value={this.state.searchValue} placeholder={this.state.searchValue} />
+          <input id="search" onChange={this.props.search} type="search" name="search" value={this.props.value} placeholder={this.props.value} />
         </div>
         <input type="submit" value="search" />      
         </form>

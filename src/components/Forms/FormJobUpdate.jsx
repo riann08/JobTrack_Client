@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import apiHandler from "../../api/apiHandler"
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 //import { UserContext } from "../Auth/UserContext";
 
 export class FormJobUpdate extends Component {
- state = {
+  state = {
     company: "",
-    jobTitle: "",   
+    jobTitle: "",
     jobDescription: "",
     contactPerson: { name: "", phone: "", email: "" },
     website: "",
@@ -17,30 +17,30 @@ export class FormJobUpdate extends Component {
 
   componentDidMount() {
     const jobId = this.props.match.params.id;
-    
+
     apiHandler.getJobInfo(jobId)
-    .then((apiResponse) => {
-      console.log(apiResponse);
-      const job = apiResponse;
-       this.setState( {
-        company: job.company,
-        jobTitle: job.jobTitle,
-        jobDescription: job.jobDescription,
-        contactPerson_Name: job.contactPerson_Name, 
-        contactPerson_Phone: job.contactPerson_Phone, 
-        contactPerson_Email:job.contactPerson_Email,
-        website: job.website,
-        notes: job.notes,
-        cvSentDate: job.cvSentDate,
-        status: job.status
-       })
+      .then((apiResponse) => {
+        console.log(apiResponse);
+        const job = apiResponse;
+        this.setState({
+          company: job.company,
+          jobTitle: job.jobTitle,
+          jobDescription: job.jobDescription,
+          contactPerson_Name: job.contactPerson_Name,
+          contactPerson_Phone: job.contactPerson_Phone,
+          contactPerson_Email: job.contactPerson_Email,
+          website: job.website,
+          notes: job.notes,
+          cvSentDate: job.cvSentDate,
+          status: job.status
+        })
       })
       .catch((error) => {
         console.log(error);
       });
   }
 
-//update
+  //update
   handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -52,11 +52,11 @@ export class FormJobUpdate extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
 
-    
-const jobId = this.props.match.params.id;
+
+    const jobId = this.props.match.params.id;
 
     apiHandler
-      .updateJob(jobId, this.state) 
+      .updateJob(jobId, this.state)
       .then((apiResponse) => {
         console.log(apiResponse);
         this.props.history.push("/dashboard");
@@ -72,40 +72,40 @@ const jobId = this.props.match.params.id;
       <div className="FormJob flex--column">
         <form className="FormJob__form flex--column" onSubmit={this.handleSubmit}>
           <div>
-            <label htmlFor="">Company Name</label>
-          </div>
-          <div>
-            <label htmlFor="">Job Title</label>
-          </div>
-          <div>
+            <label className="FormJob__form __label" >Company Name</label>
             <input onChange={this.handleChange} type="text" name="company" value={this.state.company} />
-            <label htmlFor="">Job Description</label>
+          </div>
+          <div>
+            <label className="FormJob__form __label">Job Title</label>
+            <input onChange={this.handleChange} type="string" name="jobTitle" value={this.state.jobTitle} />
+          </div>
+          <div>
+            <label className="FormJob__form __label">Job Description</label>
             <input onChange={this.handleChange} type="text" name="jobDescription" value={this.state.jobDescription} />
           </div>
-            <input onChange={this.handleChange} type="string" name="jobTitle" value={this.state.jobTitle} />
 
           <div className="contact flex--column">
             <p>Contact person</p>
-            <label htmlFor="">Name</label>
+            <label className="FormJob__form __label">Name</label>
             <input onChange={this.handleChange} type="text" name="contactPerson_Name" value={this.state.contactPerson_Name} />
 
-            <label htmlFor="">Phone number</label>
+            <label className="FormJob__form __label">Phone number</label>
             <input onChange={this.handleChange} type="text" name="contactPerson_Phone" value={this.state.contactPerson_Phone} />
-            <label htmlFor="">Email</label>
+            <label className="FormJob__form __label">Email</label>
             <input onChange={this.handleChange} type="text" name="contactPerson_Email" value={this.state.contactPerson_Email} />
           </div>
 
           <div>
-            <label>
+            <label className="FormJob__form __label">
               Notes
           <textarea name="notes" value={this.state.notes} onChange={this.handleChange} />
             </label>
           </div>
-          
+
           <div>
-            <label>
+            <label className="FormJob__form __label">
               Select status:
-          <select  name="status" value={this.state.status} onChange={this.handleChange}>
+          <select name="status" value={this.state.status} onChange={this.handleChange}>
                 <option value="To Apply For">To Apply For</option>
                 <option value="CV Sent ">CV Sent </option>
                 <option value="To Follow-Up">To Follow Up</option>
@@ -118,9 +118,9 @@ const jobId = this.props.match.params.id;
           </div>
 
           <div>
-            <label htmlFor="">CV sent on  </label>
-            <input onChange={this.handleChange} type="date" name="cvSentDate" 
-            value={this.state.cvSentDate} />
+            <label className="FormJob__form __label">CV sent on  </label>
+            <input onChange={this.handleChange} type="date" name="cvSentDate"
+              value={this.state.cvSentDate} />
           </div>
 
           <button>Submit !</button>

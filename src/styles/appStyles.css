@@ -1,80 +1,85 @@
-
-.SignIn{
-    width: 80vw;
-    border: blue 2px solid;
-    background-color: cadetblue;
-  }
-
-.FormSignup{
-    border: #00BFA6 1px solid;
-    box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
-
-    border-radius: 10px;
-    width: 400px;
-    height: 400px;
-
+.Signin {
+  width: auto;
+  height: auto;
+  margin-top: 100px;
 }
 
-.FormSignIn{
-    border: #00BFA6 1px solid;
-    box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
-    border-radius: 10px;
-    width: 400px;
-    display: flex;
-
-height: 200px}
-
-
-
-.Home{ 
-    justify-content: space-around;}
-
-.Home__img{
-    width: 400px;
-    height:800px;
+.FormSignup {
+  border: #00bfa6 1px solid;
+  box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
+  border-radius: 10px;
+  width: 400px;
+  height: 400px;
 }
 
-.FormJob{
-    font-size: 16px;
-    padding: 20px;
-    width:35%;
-    margin-left: auto;
-    margin-right: auto;
-    border: azure 3px solid;
-
+.Form .FormSignin {
+  border: #00bfa6 1px solid;
+  box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
+  border-radius: 10px;
+  width: 400px;
+  display: flex;
+  height: 200px;
 }
 
-grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0px 17px;
-    grid-template-areas:
-      ". . .";
-  }
-
-.contact{
-    background-color: rgba(99, 231, 231, 0.877);
-    width: 100%;
-    border: 50px;
-    margin: 10px;
-    padding: 20px;
-    font-size: 12px;
+.Home {
+  justify-content: space-evenly;
 }
 
-.Dashboard__search{
-    justify-content: space-between;
+.Home__img {
+  width: 400px;
+  height: 800px;
 }
 
-.Dashboard__main{
-    background-color:rgba(255, 247, 247, 0.938);
-    flex-grow: 1;
-    flex-wrap: wrap;
-    height: 100vh;
-    display: flex;
-    justify-content: flex-start;
-    
+.FormJob {
+  font-size: 16px;
+  padding: 20px;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  border: azure 3px solid;
+  color: darkgray;
+  text-align: left;
+}
 
+.__label {
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0 4px;
+  grid-template-areas: ". . . . . . .";
+}
+
+.contact {
+  background-color: rgba(99, 231, 231, 0.877);
+  width: 100%;
+  border: 50px;
+  margin: 10px;
+  padding: 20px;
+  font-size: 12px;
+}
+
+.Dashboard__column {
+  height: 100vh;
+  background-color: #f5f4f4;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: auto;
+}
+.Dashboard__search {
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.Dashboard__main {
+  flex-grow: 1;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: auto;
 }
 
 /* .JobCard{
@@ -82,25 +87,35 @@ grid-container {
     width: 200px;
     margin: 10px;} */
 
-
 .JobCard {
-    background-color: whitesmoke;
-    border-radius: 4px;
-    margin-top: 8px;
-    margin-bottom: 5px;
-    padding: 25px 25px 15px 25px;
-    transition: 0.5s;
-  }
+  border: #cdac81 2px solid;
+  background-color: #cae4db;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+  padding: 25px 25px 15px 25px;
+  transition: 0.5s;
+}
 
-  .JobCard:hover {
-    box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
-    transform: scale(1)}
+.JobCard h3 {
+  color: #ec4646;
+}
 
-    .Profile{
-        border-radius: 5px;
-        border: 1px solid #00303F;
-        width: 350px;
-        height: 500px;  
-        color:black;
+.JobCard:hover {
+  box-shadow: 5px 5px 5px 1px rgb(173, 196, 211);
+  transform: scale(1);
+}
 
-    }
+.Profile {
+  border-radius: 5px;
+  border: 1px solid #00303f;
+  width: 350px;
+  height: 500px;
+  color: black;
+}
+
+.NotFound img {
+  margin-top: 40px;
+  width: 50%;
+  height: 70%;
+}

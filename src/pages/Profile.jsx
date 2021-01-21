@@ -53,7 +53,7 @@ const Profile = ({
   context
 }) => {
 return (
-  <div className="Profile flex--column">
+  context.user && <div className="Profile flex--column">
     <p>Name: {context.user.userName}</p>
     <p>E-mail: {context.user.email}</p>
     <p>Password: {context.user.password}</p>
