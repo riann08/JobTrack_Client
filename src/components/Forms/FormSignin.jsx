@@ -47,7 +47,7 @@ class FormSignin extends Component {
         <input type="email" id="email" name="email" onChange={this.handleChange} value={this.state.email} />
         <label htmlFor="password">Password</label>
         <input type="password" id="password" name="password" onChange={this.handleChange} value={this.state.password} />
-        <button className="FormSignin__btn">Submit</button>
+        <button className="FormSignin__btn ">Log in</button>
       </form>
 
     );

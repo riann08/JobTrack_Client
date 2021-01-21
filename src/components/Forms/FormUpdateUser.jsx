@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { UserContext } from "../Auth/UserContext";
 import apiHandler from "../../api/apiHandler";
 
@@ -74,13 +74,13 @@ class FormUpdateUser extends Component {
   };
 
   render() {
-    // if (this.context.user) {
-    //   return <Redirect to="/" />;
-    // }
+    if (!this.context.user) {
+      return <Redirect to="/" />;
+    }
 
     return (
 
-      <div className="FormJobUpdate flex--column">
+      <div className="FormUpdateUser JodCard flex--column">
         <h3>Update My Profile</h3>
         <hr />
         <form className="flex--column"
@@ -118,10 +118,10 @@ class FormUpdateUser extends Component {
           id="profileImg"
           name="profileImg"
         /> */}
-          <button className="blueBtn">Submit</button>
 
+          <button className="blueBtn addMargin">Submit</button>
         </form>
-        <button onClick={this.handleDelete}>Delete</button>
+        <button id="updateDltBtn" onClick={this.handleDelete}>Delete profile</button>
       </div>
     );
   }

@@ -58,11 +58,9 @@
 }
 
 .contact {
-  background-color: rgba(99, 231, 231, 0.877);
   width: 100%;
-  border: 50px;
   margin: 10px;
-  padding: 20px;
+  padding: 10px;
   font-size: 12px;
 }
 
@@ -166,12 +164,12 @@ hr {
   border-radius: 5px;
   border: 1px solid #00303f;
   height: 400px;
+  width: auto;
   margin: 100px 300px;
   color: black;
   border: #e9ebf2 2px solid;
   border-radius: 4px;
   padding: 10px;
-  transition: 0.5s;
   text-align: left;
   display: flex;
   justify-content: space-evenly;
@@ -206,6 +204,16 @@ hr {
   box-sizing: border-box;
 }
 
+.FormUpdateUser {
+  height: 500px;
+  padding: 40px;
+  border: 1px solid #ccc;
+}
+
+.FormUpdateUser label {
+  color: #00bfa6;
+}
+
 .FormJob_label {
   width: 100%;
   padding: 12px 20px;
@@ -229,4 +237,37 @@ hr {
 .JobCard__buttonDiv {
   margin-top: 10px;
   width: 200px;
+}
+
+#updateDltBtn {
+  margin: 10px 0;
+}
+
+.addMargin {
+  margin-top: 10px;
+}
+
+#required {
+  color: #a54b4a;
+  font-size: 12px;
+}
+
+select {
+  margin-bottom: 10px;
+}
+
+#detailImg {
+  z-index: -1;
+  height: 60vh;
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+}
+.topcard {
+  position: absolute;
+  left: 10px;
+  z-index: 99;
+  background-color: white;
+  color: #00303f;
+  text-align: center;
 }

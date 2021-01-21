@@ -71,7 +71,7 @@ export class FormJobUpdate extends Component {
     return (
 
       <div className="FormJob flex--column">
-        <h3>Edit</h3>
+        <h3>Edit Job Info</h3>
 
         <form className="FormJobUpdate flex--column" onSubmit={this.handleSubmit}>
 
@@ -88,7 +88,7 @@ export class FormJobUpdate extends Component {
           <input onChange={this.handleChange} type="text" name="jobDescription" value={this.state.jobDescription} />
 
 
-          <div className=" flex--column">
+          <div className="contact flex--column">
             <h4>Contact person</h4>
             <label>Name</label>
             <input onChange={this.handleChange} type="text" name="contactPerson_Name" value={this.state.contactPerson_Name} />
@@ -119,7 +119,7 @@ export class FormJobUpdate extends Component {
               value={this.state.cvSentDate} /></div>}
 
 
-          <button>Submit !</button>
+          <button className="blueBtn addMargin">Submit !</button>
         </form>
       </div>
     );
