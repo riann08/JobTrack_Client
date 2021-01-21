@@ -11,7 +11,7 @@ export class FormJobUpdate extends Component {
     contactPerson: { name: "", phone: "", email: "" },
     website: "",
     notes: "",
-    status: "",
+    status: "To Apply For",
     cvSentDate: ""
   };
 

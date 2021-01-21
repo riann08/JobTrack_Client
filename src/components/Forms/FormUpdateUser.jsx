@@ -80,7 +80,9 @@ class FormUpdateUser extends Component {
 
     return (
 
-      <div className="FormUpdateUser flex--column">
+      <div className="FormJobUpdate flex--column">
+        <h3>Update My Profile</h3>
+        <hr />
         <form className="flex--column"
           onSubmit={this.handleSubmit}>
           <label htmlFor="userName">User Name</label>
@@ -116,7 +118,7 @@ class FormUpdateUser extends Component {
           id="profileImg"
           name="profileImg"
         /> */}
-          <button>Submit</button>
+          <button className="blueBtn">Submit</button>
 
         </form>
         <button onClick={this.handleDelete}>Delete</button>

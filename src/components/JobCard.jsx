@@ -28,6 +28,7 @@ class JobCard extends React.Component {
           <Link to={"/job/" + this.props.job._id}>
             See more...
           </Link>
+
           <div className="JobCard__buttonDiv flex--row"  >
             <button className="blueBtn"><Link to={"/job/" + this.props.job._id + "/edit"} >
               Edit

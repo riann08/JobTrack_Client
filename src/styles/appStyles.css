@@ -24,6 +24,7 @@
 
 .Home {
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .Home__img {
@@ -53,6 +54,7 @@
   grid-template-rows: 1fr;
   gap: 0 4px;
   grid-template-areas: ". . . . . . .";
+  margin: 0 5px;
 }
 
 .contact {
@@ -84,8 +86,7 @@ hr {
 }
 .Dashboard__search {
   justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 0px;
+  margin: 10px 5px;
 }
 
 .Dashboard__main {
@@ -103,7 +104,6 @@ hr {
   margin-bottom: 5px;
   padding: 10px;
   transition: 0.5s;
-  width: 95%;
   align-content: center;
 }
 
@@ -113,7 +113,7 @@ hr {
   width: auto;
 }
 .blueBtn {
-  margin: 20px;
+  margin-top: 20px 0px;
   width: 80px;
   height: auto;
   padding: 0 5px;
@@ -165,9 +165,16 @@ hr {
 .Profile {
   border-radius: 5px;
   border: 1px solid #00303f;
-  width: 350px;
-  height: 500px;
+  height: 400px;
+  margin: 100px 300px;
   color: black;
+  border: #e9ebf2 2px solid;
+  border-radius: 4px;
+  padding: 10px;
+  transition: 0.5s;
+  text-align: left;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .NotFound img {
@@ -217,4 +224,9 @@ hr {
 
 .FormJobUpdate label {
   color: #00bfa6;
+}
+
+.JobCard__buttonDiv {
+  margin-top: 10px;
+  width: 200px;
 }

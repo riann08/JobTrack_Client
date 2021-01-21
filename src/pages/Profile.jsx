@@ -1,7 +1,7 @@
 import React from "react";
 //import FormUpdateUser from "../components/Forms/FormUpdateUser"
-import {Link} from "react-router-dom"
-import {withUser} from "../components/Auth/withUser";
+import { Link } from "react-router-dom"
+import { withUser } from "../components/Auth/withUser";
 
 // class Profile extends React.Component {
 //   static contextType = UserContext;
@@ -9,7 +9,7 @@ import {withUser} from "../components/Auth/withUser";
 //   state={
 //    user : []
 //   }
-  
+
 // componentDidMount(){
 // console.log(this.context.user._id)
 
@@ -17,7 +17,7 @@ import {withUser} from "../components/Auth/withUser";
 //     apiHandler.getUserInfo(userId) 
 //         .then((responseFromApi) => {
 //             console.log(responseFromApi);
-            
+
 //                 this.setState({
 //                     user: responseFromApi,
 //                 });
@@ -35,7 +35,7 @@ import {withUser} from "../components/Auth/withUser";
 //         {this.props.name}
 //       </h1>
 //      <FormUpdateUser user={this.state.user} />
-     
+
 //      <button>Edit</button>
 
 //     </div>
@@ -52,16 +52,19 @@ const Profile = ({
   password,
   context
 }) => {
-return (
-  context.user && <div className="Profile flex--column">
-    <p>Name: {context.user.userName}</p>
-    <p>E-mail: {context.user.email}</p>
-    <p>Password: {context.user.password}</p>
+  return (
+    context.user && <div className="Profile JobCard flex--column">
+      <h1>My Profile</h1>
+      <hr />
+      <div className="flex--row"><p>Name:</p> <h4>{context.user.userName}</h4></div>
+      <div className="flex--row"><p>Email: </p> <h4>{context.user.email}</h4></div>
+      <div className="flex--row"><p>Password: </p> <h4>***</h4></div>
 
-    <Link to={"/profile/" + context.user._id + "/edit"} >
-            Edit
-          </Link>
-  </div>
-)}
+      <button className="blueBtn"><Link to={"/profile/" + context.user._id + "/edit"} >
+        Edit
+          </Link></button>
+    </div>
+  )
+}
 
 export default withUser(Profile)

@@ -58,11 +58,11 @@ export class FormJob extends Component {
 
       <div className="FormJob flex--column">
         <form className="FormJob__form flex--column" onSubmit={this.handleSubmit}>
-          <label classname="FormJob__label" htmlFor="">Company Name</label>
+          <label classname="FormJob__label" htmlFor="">Company Name *</label>
           <input classname="FormJob__input" className="FormJob__input" onChange={this.handleChange} type="text" name="company" value={this.state.company} />
 
 
-          <label classname="FormJob__label" htmlFor="">Job Title</label>
+          <label classname="FormJob__label" htmlFor="">Job Title *</label>
           <input classname="FormJob__input" onChange={this.handleChange} type="text" name="jobTitle" value={this.state.jobTitle} />
 
           <label classname="FormJob__label" htmlFor="">Job Location</label>
@@ -110,6 +110,7 @@ export class FormJob extends Component {
               <input classname="FormJob__input" onChange={this.handleChange} type="date" name="cvSentDate" value={this.state.cvSentDate} />
             </div>)}
 
+          <p id="required"> * Required fields</p>
           <button className="blueBtn">Submit !</button>
         </form>
       </div >

@@ -82,7 +82,7 @@ class Dashboard extends React.Component {
                 <div className="Dashboard__search flex--row">
                     <h3>Welcome to your Dashboard.</h3>
                     <SearchBar search={this.handleSearch} value={this.state.searchByCompanyName} />
-                </div>;
+                </div>
                 <div className="Dashboard__main grid-container">
                     {jobsByStatus.map((column) => {
 
