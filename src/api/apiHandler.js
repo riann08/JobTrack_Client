@@ -104,9 +104,9 @@ export default {
       .catch(errorHandler);
   },
 
-  deleteUser(userId) {
+  deleteUser() {
     return service
-      .delete(`/user/${userId}`)
+      .delete("/user/me")
       .then((res) => res.data)
       .catch(errorHandler);
   }
