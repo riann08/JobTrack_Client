@@ -24,14 +24,14 @@ function App() {
         <Route exact path="/auth/logout" />
 
         {/* ProtectedRoute */}
-        <Route exact path="/profile" component={Profile} />
-        <Route exact path="/job" component={Dashboard} />
-        <Route exact path="/job/create" component={FormJob} />
-        <Route exact path="/job/:id/edit" component={FormJobUpdate} />
-        <Route exact path="/job/:id/delete" />
+        <ProtectedRoute exact path="/profile" component={Profile} />
+        <ProtectedRoute exact path="/job" component={Dashboard} />
+        <ProtectedRoute exact path="/job/create" component={FormJob} />
+        <ProtectedRoute exact path="/job/:id/edit" component={FormJobUpdate} />
+        <ProtectedRoute exact path="/job/:id/delete" />
         <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/profile/:id/edit" component={FormUpdateUser} />
-        <Route exact path="/job/:id" component={JobDetails} />
+        <ProtectedRoute exact path="/profile/:id/edit" component={FormUpdateUser} />
+        <ProtectedRoute exact path="/job/:id" component={JobDetails} />
 
         <Route path="*" component={NotFound} />
       </Switch>

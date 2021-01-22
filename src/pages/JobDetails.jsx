@@ -37,7 +37,7 @@ export class JobDetails extends Component {
                 <h3>{this.state.job.location}</h3>
                 <hr />
                 <p>Website: {this.state.job.website} </p>
-                <p>Job Description: {this.state.job.jobDescription} </p>
+                <p id="jobDesc">  Job Description: {this.state.job.jobDescription} </p>
 
 
                 <h5>Contact Person: </h5>
@@ -47,7 +47,7 @@ export class JobDetails extends Component {
                 </div>
 
 
-                <p>Notes: {this.state.job.notes}</p>
+                <p id="notes">Notes: {this.state.job.notes}</p>
                 <p>Status: {this.state.job.status}</p>
 
 

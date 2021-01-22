@@ -243,6 +243,13 @@ hr {
   padding: 40px;
 }
 
+#jobDesc {
+  white-space: pre-line;
+}
+s #notes {
+  white-space: pre-line;
+}
+
 .FormJobUpdate label {
   color: #00bfa6;
 }
@@ -276,7 +283,8 @@ select {
   right: 0px;
   bottom: 0;
 }
-topcard {
+
+.topcard {
   left: 10px;
   top: 50px;
   z-index: 99;
