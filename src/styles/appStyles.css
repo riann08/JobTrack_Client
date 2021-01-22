@@ -149,10 +149,22 @@ hr {
   overflow-wrap: break-word;
 }
 
+.FormJobUpdate h1 {
+  color: #282c33;
+  font: 18px;
+  text-align: left;
+}
+
 .JobCard h4 {
   color: #3c414d;
   font: 14px;
   overflow-wrap: break-word;
+}
+
+.FormJobUpdate h2 {
+  color: #282c33;
+  font: 16px;
+  text-align: left;
 }
 
 .JobCard:hover {
@@ -205,9 +217,10 @@ hr {
 }
 
 .FormUpdateUser {
-  height: 500px;
-  padding: 40px;
-  border: 1px solid #ccc;
+  border: #00bfa6 1px solid;
+  box-shadow: 5px 1px 2px 1px rgb(173, 196, 211);
+  border-radius: 10px;
+  margin-top: 100px;
 }
 
 .FormUpdateUser label {
@@ -263,11 +276,12 @@ select {
   right: 0px;
   bottom: 0;
 }
-.topcard {
-  position: absolute;
+topcard {
   left: 10px;
+  top: 50px;
   z-index: 99;
   background-color: white;
   color: #00303f;
   text-align: center;
+  margin: 50px;
 }

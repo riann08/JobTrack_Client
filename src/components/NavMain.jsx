@@ -28,6 +28,13 @@ const NavMain = (props) => {
         {context.isLoggedIn && context.user && (
           <React.Fragment>
             <li>{"Hello, " + context.user.email + "! :)" && "Hello, " + context.user.userName + "! :)"}</li>
+
+            <li>
+              <NavLink to="/dashboard">
+                Dashboard
+              </NavLink>
+            </li>
+
             <li>
               <NavLink to="/profile">
                 My Profile

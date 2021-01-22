@@ -54,8 +54,8 @@ const Profile = ({
 }) => {
   return (
     context.user && <div className="Profile JobCard flex--column">
-      <h1>My Profile</h1>
-      <hr />
+      <h1>My Profile  </h1>
+
       <div className="flex--row"><p>Name:</p> <h4>{context.user.userName}</h4></div>
       <div className="flex--row"><p>Email: </p> <h4>{context.user.email}</h4></div>
       <div className="flex--row"><p>Password: </p> <h4>***</h4></div>

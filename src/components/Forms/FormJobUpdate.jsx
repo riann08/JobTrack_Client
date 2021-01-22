@@ -11,7 +11,7 @@ export class FormJobUpdate extends Component {
     contactPerson: { name: "", phone: "", email: "" },
     website: "",
     notes: "",
-    status: "To Apply For",
+    status: "CV Sent",
     cvSentDate: ""
   };
 
@@ -114,7 +114,7 @@ export class FormJobUpdate extends Component {
             <option value="Rejected">Job Rejected</option>
           </select>
 
-          {this.state.status === "CV Sent" && <div><label>CV sent on  </label>
+          {this.state.status.cvSentDate !== null && <div><label>CV sent on  </label>
             <input onChange={this.handleChange} type="date" name="cvSentDate"
               value={this.state.cvSentDate} /></div>}
 
