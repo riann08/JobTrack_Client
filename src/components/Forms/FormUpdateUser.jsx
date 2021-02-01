@@ -64,6 +64,7 @@ class FormUpdateUser extends Component {
     apiHandler
       .updateUser(this.context.user._id, this.state)
       .then((data) => {
+        console.log(data)
         this.context.setUser(data);
         this.props.history.push("/profile");
       })
