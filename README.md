@@ -1,3 +1,13 @@
+Hi there.
+
+This REST API is the Front-end part of my Full-Stack Project for the Ironhack Full Time web Development Bootcamp done within a week.
+
+Features to implement in the future:
+-dynamic search bar
+-adding profile photos
+-better UX
+-responsive design
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
